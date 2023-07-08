@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "YouFocus",
+  "version": "1.0.0",
+  "description": "Boost your productivity with YouFocus! This browser extension is specifically designed to minimize distractions on YouTube. By selectively hiding certain DOM elements like endless scrolling and recommended videos, it promotes focused viewing and helps curb addictive usage patterns. Whether you're studying, working, or simply trying to enjoy content without getting sidetracked, YouFocus is your go-to tool for a streamlined YouTube experience.",
+  "author": "Zachary Doucet",
+  "icons": {
+    "16": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+  "action": {
+    "default_title": "YouFocus",
+    "default_popup": "popup.html",
+    "default_icon": "images/icon.png"
+  },
+  "permissions": ["activeTab"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
